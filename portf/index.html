@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaryan's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f7ff; /* Off-white background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background for container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .intro, .social-media, .links, .resume-section {
+            background-color: #f3e5f5; /* Light purple background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .intro {
+            text-align: center;
+            flex: 1 1 100%; /* Flex basis 100% for mobile view */
+        }
+        @media (min-width: 768px) {
+            .intro {
+                flex: 1 1 48%; /* Flex basis 48% for larger screens */
+            }
+            .social-media, .links, .resume-section {
+                flex: 1 1 48%; /* Flex basis 48% for larger screens */
+            }
+        }
+        header h1 {
+            color: #6a1b9a; /* Light purple color */
+            margin: 0;
+            padding: 20px 0;
+            font-size: 2em;
+        }
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .social-media, .links {
+            margin-top: 20px;
+        }
+        h2 {
+            color: #6a1b9a; /* Light purple color */
+            border-bottom: 2px solid #6a1b9a; /* Light purple underline */
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Increased gap for equal spacing */
+        }
+        li {
+            display: flex;
+            align-items: center;
+        }
+        a {
+            text-decoration: none;
+            color: #6a1b9a; /* Light purple links */
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 1.2em; /* Increased font size */
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .social-media-icons img {
+            width: 30px; /* Increased icon size */
+            height: 30px; /* Increased icon size */
+            margin-right: 10px;
+        }
+        .resume-content {
+            display: none;
+            margin-top: 20px;
+        }
+        .resume-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .resume-grid img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="intro">
+            <header>
+                <h1>Aaryan's Portfolio</h1>
+                <img src="/home/photo1.jpg" alt="Aaryan's Photo">
+                <p>Hello! I'm Aaryan Haribhau Katore. I am from the city of Gates, Chhatrapati Sambhajinagar. I am currently pursuing my B.Tech degree from Sanjivani College of Engineering, Kopargaon. When it comes to my skills, I am a quick learner and have knowledge of programming languages and technologies such as C, HTML, CSS, JavaScript, React, Bootstrap, and the basics of IoT. This portfolio is a collection of my personal and professional achievements. Feel free to explore the links below to learn more about me.</p>
+            </header>
+        </div>
+
+        <div class="resume-section">
+            <section>
+                <h2>Resume</h2>
+                <button onclick="toggleResume()">Show/Hide Resume</button>
+                <a href="/home/Aaryan Resume.pdf" download="Aaryan_Katore_Resume.pdf">Download Resume</a>
+                <div id="resumeContent" class="resume-content">
+                    <div class="resume-grid">
+                        <img src="/home/resume.jpeg" alt="Resume Page 1" onclick="openModal('/home/resume.jpeg')">
+                        <img src="/resume/resume2.jpg" alt="Resume Page 2" onclick="openModal('/resume/resume2.jpg')">
+                        <img src="/resume/resume3.jpg" alt="Resume Page 3" onclick="openModal('/resume/resume3.jpg')">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="social-media">
+            <section>
+                <h2>Connect with Me</h2>
+                <ul class="social-media-icons">
+                    <li><img src="/home/linkdin.jpg" alt="LinkedIn Icon"><a href="https://www.linkedin.com/in/aaryan-katore-3b681222a">LinkedIn</a></li>
+                    <li><img src="/home/github.png" alt="Github Icon"><a href="https://github.com/aaryan7798">Github</a></li>
+                    <li><img src="/home/insta.jpg" alt="Instagram Icon"><a href="https://www.instagram.com/_.aaryannnn._/">Instagram</a></li>
+                </ul>
+            </section>
+        </div>
+        <div class="links">
+            <section>
+                <h2>Academic Achievements</h2>
+                <p>Explore my academic journey and accomplishments.</p>
+                <a href="academic.html">Learn More</a>
+            </section>
+            <section>
+                <h2>Personal Projects</h2>
+                <p>Check out the personal projects I've worked on.</p>
+                <a href="projects.html">Learn More</a>
+            </section>
+            <section>
+                <h2>Sports Achievements</h2>
+                <p>Discover my achievements and experiences in sports.</p>
+                <a href="SportsAchivements.html">Learn More</a>
+            </section>
+            <section>
+                <h2>Hobbies</h2>
+                <p>Find out about my hobbies and interests outside of work.</p>
+                <a href="hobby.html">Learn More</a>
+            </section>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Resume Image">
+        </div>
+    </div>
+
+    <script>
+        function toggleResume() {
+            var resumeContent = document.getElementById("resumeContent");
+            if (resumeContent.style.display === "none" || resumeContent.style.display === "") {
+                resumeContent.style.display = "block";
+            } else {
+                resumeContent.style.display = "none";
+            }
+        }
+
+        function openModal(imageSrc) {
+            var modal = document.getElementById("myModal");
+            var modalImage = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImage.src = imageSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+

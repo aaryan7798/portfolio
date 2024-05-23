@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaryan's Sports Achievements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f7ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            color: #6a1b9a;
+            margin: 0;
+            padding: 20px 0;
+        }
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+        nav a {
+            color: #6a1b9a;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section h2 {
+            color: #6a1b9a;
+            border-bottom: 2px solid #6a1b9a;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .achievement {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #f3e5f5;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .achievement h3 {
+            margin-top: 0;
+        }
+        .achievement p {
+            margin: 5px 0;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .photo-grid img {
+            width: 150px;  /* Adjusted the width to make photos larger */
+            height: 150px;  /* Adjusted the height to make photos larger */
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f3e5f5;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sports Achievements</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="academic.html">Academic Achievements</a>
+            <a href="projects.html">Personal Projects</a>
+            <a href="hobby.html">Hobbies</a>
+        </nav>
+
+        <section>
+            <h2>My Sports Achievements</h2>
+
+            <div class="achievement">
+                <h3>Achievement 1: Inter College Football Championship</h3>
+                <p>Got 3rd Rank in the Inter collegiate level football championship as the captain of the team. Demonstrated excellent leadership and teamwork.</p>
+                <div class="photo-grid">
+                    <img src="/sports/intercollegiate.jpeg" alt="Achievement 1 Photo 1" onclick="openModal('/sports/intercollegiate.jpeg')">
+                    <img src="/sports/intercollegiate1.jpeg" alt="Achievement 1 Photo 2" onclick="openModal('/sports/intercollegiate1.jpeg')">
+                    <img src="/sports/intercollegite 2.jpeg" alt="Achievement 1 Photo 3" onclick="openModal('/sports/intercollegite 2.jpeg')">
+                </div>
+            </div>
+            <div class="achievement">
+                <h3>Achievement 2: Inter-Zonal Football Tournament year 2021-2022</h3>
+                <p>Got selected from Ahmednagar Vibhagh from intercollegiate for Ahmednagar zone.</p>
+                <div class="photo-grid">
+                    <img src="/sports/zonal 2021.jpeg" alt="Achievement 2 Photo 1" onclick="openModal('/sports/zonal 2021.jpeg')">
+                    <img src="sports/zonal.jpeg" alt="Achievement 2 Photo 2" onclick="openModal('sports/zonal.jpeg')">
+                    <img src="/sports/interdepartment.jpeg" alt="Achievement 2 Photo 3" onclick="openModal('/sports/interdepartment.jpeg')">
+                </div>
+            </div>
+
+            <div class="achievement">
+                <h3>Achievement 3: Inter-Zonal Football Tournament year 2023-2024</h3>
+                <p>Got selected from Ahmednagar Vibhagh from intercollegiate for second time Ahmednagar zone.</p>
+                <div class="photo-grid">
+                    <img src="/sports/zonalc2023.jpeg" alt="Achievement 3 Photo 1" onclick="openModal('/sports/zonalc2023.jpeg')">
+                    <img src="/sports/zonal2023.jpeg" alt="Achievement 3 Photo 2" onclick="openModal('/sports/zonal2023.jpeg')">
+                    <img src="/sports/zone.jpeg" alt="Achievement 3 Photo 3" onclick="openModal('/sports/zone.jpeg')">
+                </div>
+            </div>
+
+            <div class="achievement">
+                <h3>Achievement 4: Sanjivani premiere League 2021</h3>
+                <p>Won the League hosted by Sanjivani FC as the captain of the team KB's07 .</p>
+                <p>Also got Awarded as highest Goal Scorer.</p>
+                <div class="photo-grid">
+                    <img src="/sports/opens.jpeg" alt="Achievement 4 Photo 1" onclick="openModal('/sports/opens.jpeg')">
+                    <img src="/sports/open2.jpg" alt="Achievement 4 Photo 2" onclick="openModal('/sports/open2.jpg')">
+                    <img src="/sports/opens3.jpg" alt="Achievement 4 Photo 3" onclick="openModal('/sports/opens3.jpg')">
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>© 2024 Aaryan Haribhau Katore. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Achievement Photo">
+        </div>
+    </div>
+
+    <script>
+        function openModal(imageSrc) {
+            var modal = document.getElementById("myModal");
+            var modalImage = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImage.src = imageSrc;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

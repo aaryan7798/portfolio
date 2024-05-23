@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaryan's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f7ff; /* Off-white background */
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background for container */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            color: #6a1b9a; /* Light purple color */
+            margin: 0;
+            padding: 20px 0;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #6a1b9a;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 40px;
+            background-color: #f3e5f5; /* Light purple background */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        section h2 {
+            color: #6a1b9a; /* Light purple color */
+            border-bottom: 2px solid #6a1b9a; /* Light purple underline */
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        #certificates {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px; 
+            padding: 20px;
+            clear: both; /* Ensure certificates section is on a new line */
+        }
+        .certificate-frame {
+            background-color: #ffffff; /* White background for container */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            position: static;
+        }
+        .certificate-frame img {
+            width: 90%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .certificate-frame p {
+            margin: 10px 0 0;
+            font-size: 14px;
+            color: #333;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Aaryan's Academic Achievements</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="SportsAchivements.html">SportsAchivements</a></li>
+                <li><a href="hobby.html">Hobbies</a></li>
+            </ul>
+        </nav>
+
+        <section id="welcome" class="container">
+            <h2>Welcome!</h2>
+            <p>Hello! I'm Aaryan Haribhau Katore, a passionate and dedicated student currently pursuing my B.Tech degree at Sanjivani College of Engineering, Kopargaon. This academic portfolio is a showcase of my educational journey, skills, and achievements.</p>
+        </section>
+
+        <section id="about-me" class="container">
+            <h2>About Me</h2>
+            <p><strong>Name:</strong> Aaryan Haribhau Katore</p>
+            <p><strong>Hometown:</strong> Chhatrapati Sambhajinagar</p>
+            <p><strong>Current Institution:</strong> Sanjivani College of Engineering, Kopargaon</p>
+            <p><strong>Degree Pursued:</strong> Bachelor of Technology (B.Tech)</p>
+        </section>
+
+        <section id="skills" class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Programming Languages:</strong> C, HTML, CSS, JavaScript</li>
+                <li><strong>Frameworks & Libraries:</strong> React, Bootstrap</li>
+                <li><strong>Additional Skills:</strong> Basics of IoT</li>
+                <li><strong>Soft Skills:</strong> Quick learner, effective communication</li>
+            </ul>
+        </section>
+
+        <section id="academic-achievements" class="container">
+            <h2>Academic Achievements</h2>
+            <ul>
+                <li><strong>Achievement 1:</strong> Certification of completion Employability Skill Development Program by RPG Foundation.</li>
+                <li><strong>Achievement 2:</strong> Certification of UI/UX and Frontend Development By Talently </li>
+                <li><strong>Achievement 3:</strong> Resarch Paper Publication <a href="http://www.jetir.org/papers/JETIR2404339.pdf">Link </a></li>
+            </ul>
+        </section>
+
+        <div class="container">
+            <h2>Certificates</h2>
+            <section id="certificates">
+                <div class="certificate-frame" onclick="openModal('/certificates/html5.jpg')">
+                    <img src="/certificates/html5.jpg" alt="Certificate 1">
+                    <p>HTML5 Certificate</p>
+                </div>
+                <div class="certificate-frame" onclick="openModal('/certificates/css.jpg')">
+                    <img src="/certificates/css.jpg" alt="Certificate 2">
+                    <p>CSS Certificate</p>
+                </div>
+                <div class="certificate-frame" onclick="openModal('/Certificates/zensor.jpg')">
+                    <img src="/certificates/zensor.jpg" alt="Certificate 3">
+                    <p>Zensor Internship</p>
+                </div>
+                <div class="certificate-frame" onclick="openModal('/certificates/iot4.0.jpg')">
+                    <img src="/certificates/iot4.0.jpg" alt="Certificate 4">
+                    <p>Nptel Certification</p>
+                </div>
+                <div class="certificate-frame" onclick="openModal('/certificates/privnptel.jpg')">
+                    <img src="/certificates/privnptel.jpg" alt="Certificate 5">
+                    <p>Nptel Certification</p>
+                </div>
+                <div class="certificate-frame" onclick="openModal('/certificates/JETIR.jpg')">
+                    <img src="/certificates/JETIR.jpg" alt="Certificate 6">
+                    <p>Paper Publication</p>
+                </div>
+            </section>
+        </div>  
+
+        <section id="contact" class="container">
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> <a href="mailto:aaryankatore@gmail.com">aaryanlatore1@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/aaryan-katore-3b681222a/">Aaryan's LinkedIn</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/aaryan7798">Aaryan's GitHub</a></p>
+        </section>
+
+        <footer>
+            <p>© 2024 Aaryan Haribhau Katore. All rights reserved.</p>
+        </footer>
+
+        <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <img id="modalImage" src="" alt="Certificate Image">
+            </div>
+        </div>
+
+        <script>
+            function openModal(imageSrc) {
+                var modal = document.getElementById("myModal");
+                var modalImage = document.getElementById("modalImage");
+                modal.style.display = "block";
+                modalImage.src = imageSrc;
+            }
+
+            function closeModal() {
+                var modal = document.getElementById("myModal");
+                modal.style.display = "none";
+            }
+
+            window.onclick = function(event) {
+                var modal = document.getElementById("myModal");
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
+
